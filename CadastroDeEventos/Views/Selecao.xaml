@@ -41,7 +41,12 @@
                              Maximum="1000"
                              Increment="10"/>
                 </Grid>
-                </VerticalStackLayout>
+
+                <Picker x:Name="pck_salao"
+                        Title="Selecione seu Salão"
+                        ItemDisplayBinding="{Binding Descricao}"/>
+
+            </VerticalStackLayout>
         </Frame>
 
         <Frame Padding="10">
@@ -52,7 +57,8 @@
 
                     <Label Text="Data de Início: "/>
                     <DatePicker x:Name="dtpck_inicio"
-                                Format="ddd/MM/yyyy"/>
+                                DateSelected="dtpck_inicio_DateSelected"
+                                Format="dd/MM/yyyy"/>
                     
                 </HorizontalStackLayout>
 
@@ -60,7 +66,7 @@
 
                     <Label Text="Data de Término: "/>
                     <DatePicker x:Name="dtpck_termino"
-                                  Format="ddd/MM/yyyy"/>
+                                  Format="dd/MM/yyyy"/>
 
                 </HorizontalStackLayout>
 
@@ -68,7 +74,9 @@
             
         </Frame>
 
-        <Button Text="Finalizar"/>
+        <Button Text="Finalizar"
+                x:Name="finalizar"
+                Clicked="finalizar_Clicked"/>
 
     </VerticalStackLayout>
 </ContentPage>
