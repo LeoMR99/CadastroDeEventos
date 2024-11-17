@@ -6,10 +6,53 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="{StaticResource Gray400}">
     
-    <VerticalStackLayout>
+    <VerticalStackLayout  VerticalOptions="CenterAndExpand">
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="{Binding TipoSalao.Descricao}"
+            TextColor="{StaticResource Primary}"
+            FontFamily="SourGummyR"
+            FontSize="50"
+            HorizontalOptions="Center"/>
+
+        <Frame Margin="10">
+            <HorizontalStackLayout>               
+            <HorizontalStackLayout>
+
+                    <Label Text="Quantidade de Pessoas Convidadas: "/>
+                    <Label Text="{Binding QntPessoas}"
+                           TextColor="Black"/>
+                
+            </HorizontalStackLayout>              
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Margin="10">
+
+            <Grid ColumnDefinitions="*, *, *"
+                  RowDefinitions="Auto, Auto">
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Data de Início do Evento: "/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Data de Término do Evento: "/>
+                <Label Grid.Row="0" Grid.Column="2" Text="Quantidade de Dias Contratada: "/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataTermino, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Tempo, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+            </Grid>                        
+        </Frame>
+
+        <Frame Margin="10">
+
+            <HorizontalStackLayout>
+
+                <Label Text="Valor Total: "/>
+                <Label Text="{Binding ValorTotal, StringFormat='{}{0:c}'}"
+                       TextColor="{StaticResource Primary}"/>
+
+            </HorizontalStackLayout>
+            
+        </Frame>
+        
+        
     </VerticalStackLayout>
 </ContentPage>
