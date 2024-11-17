@@ -6,4 +6,14 @@ public partial class Resumo : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void corrigir_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void confirmar_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }

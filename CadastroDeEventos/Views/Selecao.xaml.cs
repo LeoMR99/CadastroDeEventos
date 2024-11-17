@@ -1,4 +1,5 @@
 using CadastroDeEventos.Models;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CadastroDeEventos.Views;
 
@@ -21,14 +22,14 @@ public partial class Selecao : ContentPage
 		dtpck_termino.MaximumDate = dtpck_inicio.Date.AddMonths(7);
 		    }
 
-    private async void finalizar_Clicked(object sender, EventArgs e)
+    public async void finalizar_Clicked(object sender, EventArgs e)
     {
 		try
-		{
-
+        {
+			
 			Calculo c = new Calculo
 			{
-
+				NomeEvento = txt_Nome.Text,
 				TipoSalao = (Salao)pck_salao.SelectedItem,
 				QntPessoas = Convert.ToInt32(stp_participantes.Value),
 				DataInicio = dtpck_inicio.Date,
@@ -58,4 +59,5 @@ public partial class Selecao : ContentPage
 		dtpck_termino.MinimumDate = data_selecionada_inicio.AddDays(1);
 		dtpck_termino.MaximumDate = data_selecionada_inicio.AddMonths(7);
     }
+
 }

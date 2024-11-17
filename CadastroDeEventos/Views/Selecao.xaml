@@ -4,38 +4,87 @@
              x:Class="CadastroDeEventos.Views.Selecao"
              Title="Selecao"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="{StaticResource Gray400}">
+             BackgroundColor="{StaticResource Gray600}">
 
 
     <VerticalStackLayout VerticalOptions="CenterAndExpand"
-                         Padding="10">
+                         Padding="10"
+                         Spacing="0">
 
         <Label 
-            Text="Organize o seu Evento!"
+            Text="Organize seu Evento!"
             FontFamily="SourGummyR"
-            FontSize="50"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="FillAndExpand"
+            FontSize="35"
+            BackgroundColor="{StaticResource Gray500}"            
             TextColor="Purple"/>
-        
-        <Frame Padding="10">
+
+        <Frame Margin="10"
+               Padding="10"
+               BackgroundColor="DimGray"
+               BorderColor="Black">
+
+            <Grid RowDefinitions="Auto, Auto"
+                  ColumnDefinitions="*, 2*">
+
+                <Label Grid.Row="0"  Grid.Column="0"
+                       Text="Nome do Evento: "
+                       TextColor="Purple"
+                       FontFamily="SourGummyR"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+
+                <Entry Grid.Row="0" Grid.Column="1"
+                       x:Name="txt_Nome"
+                       FontFamily="SourGummyR"
+                       Placeholder="Digite Aqui o Nome do Evento"
+                       PlaceholderColor="{StaticResource Gray200}"
+                       FontSize="14"
+                       IsReadOnly="False"
+                       MaxLength="40"
+                       HeightRequest="50"
+                       IsPassword="False"
+                       Keyboard="Text"
+                       CharacterSpacing="2"
+                       ClearButtonVisibility="WhileEditing"
+                       ReturnType="Done"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       />  
+
+            </Grid>
+
+        </Frame>
+
+        <Frame Padding="10"
+               Margin="10"
+               BackgroundColor="{StaticResource Gray500}"
+               BorderColor="Black">
             <VerticalStackLayout>
 
                 <Grid RowDefinitions="Auto, Auto"
-                   ColumnDefinitions="*, *, 2*">
+                      ColumnDefinitions="*, *"
+                      RowSpacing="15">
 
-                    <Label Grid.Row="0"  Grid.Column="0"
-                           Text="Nome do Evento: "
-                           TextColor="MediumPurple"/>
-
-                    <Label Grid.Row="1"  Grid.Column="0"
+                    <Label Grid.Row="0" Grid.Column="0"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           FontFamily="SourGummyR"
                            Text="Quantidade de Participantes: "
-                           TextColor="MediumPurple"/>
+                           TextColor="Purple"/>
 
-                    <Label Grid.Row="1"  Grid.Column="1"
+                    <Label Grid.Row="0"  Grid.Column="1"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
                            Text="{Binding Value}"
-                           TextColor="MediumPurple"
+                           FontFamily="SourGummyR"
+                           TextColor="Black"
                            BindingContext="{x:Reference stp_participantes}"/>
 
-                    <Stepper Grid.Row="1" Grid.Column="2"
+                    <Stepper Grid.Row="0" Grid.Column="1"
+                             HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="CenterAndExpand"
                              x:Name="stp_participantes"
                              Minimum="10"
                              Maximum="1000"
@@ -44,29 +93,43 @@
 
                 <Picker x:Name="pck_salao"
                         Title="Selecione seu Salão"
+                        FontFamily="SourGummyR"
+                        TitleColor="Purple"
+                        TextColor="Black"
                         ItemDisplayBinding="{Binding Descricao}"/>
 
             </VerticalStackLayout>
         </Frame>
 
-        <Frame Padding="10">
+        <Frame Padding="10"
+               Margin="10"
+               BackgroundColor="{StaticResource Gray500}"
+               BorderColor="Black">
 
-            <VerticalStackLayout>
+            <VerticalStackLayout Spacing="10">
                 
                 <HorizontalStackLayout>
 
-                    <Label Text="Data de Início: "/>
+                    <Label Text="Data de Início: "
+                           FontFamily="SourGummyR"
+                           TextColor="Purple"/>
                     <DatePicker x:Name="dtpck_inicio"
+                                FontFamily="SourGummyR"
                                 DateSelected="dtpck_inicio_DateSelected"
-                                Format="dd/MM/yyyy"/>
+                                Format="dd/MM/yyyy"
+                                TextColor="Purple"/>
                     
                 </HorizontalStackLayout>
 
                 <HorizontalStackLayout>
 
-                    <Label Text="Data de Término: "/>
+                    <Label Text="Data de Término: "
+                           FontFamily="SourGummyR"
+                           TextColor="Purple"/>
                     <DatePicker x:Name="dtpck_termino"
-                                  Format="dd/MM/yyyy"/>
+                                FontFamily="SourGummyR"
+                                  Format="dd/MM/yyyy"
+                                TextColor="Purple"/>
 
                 </HorizontalStackLayout>
 
@@ -75,6 +138,8 @@
         </Frame>
 
         <Button Text="Finalizar"
+                HorizontalOptions="Center"
+                FontFamily="SourGummyR"
                 x:Name="finalizar"
                 Clicked="finalizar_Clicked"/>
 

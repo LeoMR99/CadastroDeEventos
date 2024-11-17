@@ -8,6 +8,7 @@ namespace CadastroDeEventos.Models
 {
     public class Calculo
     {
+        public string NomeEvento { get; set; }
         public Salao TipoSalao { get; set; }
         public int QntPessoas { get; set; }
 

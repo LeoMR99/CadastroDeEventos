@@ -4,55 +4,160 @@
              x:Class="CadastroDeEventos.Views.Resumo"
              Title="Resumo"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="{StaticResource Gray400}">
+             BackgroundColor="{StaticResource Gray600}">
     
     <VerticalStackLayout  VerticalOptions="CenterAndExpand">
         <Label 
             Text="{Binding TipoSalao.Descricao}"
-            TextColor="{StaticResource Primary}"
+            TextColor="Purple"
             FontFamily="SourGummyR"
             FontSize="50"
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center"
+            BackgroundColor="{StaticResource Gray500}"/>
 
-        <Frame Margin="10">
-            <HorizontalStackLayout>               
-            <HorizontalStackLayout>
+        <Frame Margin="10"
+               Padding="10"
+               BackgroundColor="{StaticResource Gray500}"
+               BorderColor="Black">
 
-                    <Label Text="Quantidade de Pessoas Convidadas: "/>
-                    <Label Text="{Binding QntPessoas}"
-                           TextColor="Black"/>
-                
-            </HorizontalStackLayout>              
-            </HorizontalStackLayout>
+
+            <Grid RowDefinitions="Auto"
+                  ColumnDefinitions="*, 2*">
+                          
+                    <Label Grid.Row="0" Grid.Column="0"
+                           TextColor="Purple"
+                           FontFamily="SourGummyR"
+                           HorizontalOptions="StartAndExpand"
+                           Text="Nome do Evento: "/>
+
+                <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="White"
+                           FontFamily="SourGummyR"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="{Binding NomeEvento}"/>
+
+            </Grid>
+
+
+
         </Frame>
 
-        <Frame Margin="10">
+        <Frame Margin="10"
+               Padding="10"
+               BackgroundColor="{StaticResource Gray500}"
+               BorderColor="Black">
+
+            <Grid RowDefinitions="Auto"
+                   ColumnDefinitions="2*, *">
+
+                <Label Grid.Row="0" Grid.Column="0"
+                       HorizontalOptions="StartAndExpand"
+                       FontFamily="SourGummyR"
+                       TextColor="Purple"
+                       HorizontalTextAlignment="Center"
+                       Text="Quantidade de Pessoas Convidadas: "/>
+                
+                <Label Grid.Row="0" Grid.Column="1"
+                       FontFamily="SourGummyR"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       TextColor="White"
+                       Text="{Binding QntPessoas}"/>
+
+            </Grid>
+
+
+        </Frame>
+
+        <Frame Margin="10"
+               Padding="10"
+               BackgroundColor="{StaticResource Gray500}"
+               BorderColor="Black">
 
             <Grid ColumnDefinitions="*, *, *"
-                  RowDefinitions="Auto, Auto">
+                  RowDefinitions="*, *"
+                  RowSpacing="10">
 
-                <Label Grid.Row="0" Grid.Column="0" Text="Data de Início do Evento: "/>
-                <Label Grid.Row="0" Grid.Column="1" Text="Data de Término do Evento: "/>
-                <Label Grid.Row="0" Grid.Column="2" Text="Quantidade de Dias Contratada: "/>
+                <Label Grid.Row="0" Grid.Column="0" Text="Data de Início do Evento: "
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="SourGummyR"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Purple"/>
+                
+                <Label Grid.Row="0" Grid.Column="1" Text="Data de Término do Evento: "
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="SourGummyR"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Purple"/>
+                
+                <Label Grid.Row="0" Grid.Column="2" Text="Quantidade de Dias Contratada: "
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="SourGummyR"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Purple"/>
 
-                <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataTermino, StringFormat='{}{0:dd/MM/yyyy}'}"/>
-                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Tempo, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}"
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="SourGummyR"
+                       VerticalOptions="CenterAndExpand"
+                       TextColor="White"/>
+                
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataTermino, StringFormat='{}{0:dd/MM/yyyy}'}"
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="SourGummyR"
+                       VerticalOptions="CenterAndExpand"
+                       TextColor="White"/>
+                
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Tempo}"
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="SourGummyR"
+                       VerticalOptions="CenterAndExpand"
+                       TextColor="White"/>
+                
             </Grid>                        
         </Frame>
 
-        <Frame Margin="10">
+        <Frame Margin="10"
+               Padding="10"
+               BackgroundColor="{StaticResource Gray500}"
+               BorderColor="Black">
 
-            <HorizontalStackLayout>
+            <Grid RowDefinitions="*, *"
+                  ColumnDefinitions="*, 2*">
 
-                <Label Text="Valor Total: "/>
-                <Label Text="{Binding ValorTotal, StringFormat='{}{0:c}'}"
-                       TextColor="{StaticResource Primary}"/>
+                <Label Grid.Row="0" Grid.Column="0"
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="SourGummyR"
+                       Text="Valor Total: "
+                       TextColor="Purple"/>
 
-            </HorizontalStackLayout>
-            
+                <Label Grid.Row="0" Grid.Column="1"
+                       Text="{Binding ValorTotal, StringFormat='{}{0:c}'}"
+                       TextColor="White"
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="SourGummyR"/>
+
+            </Grid>
+
         </Frame>
-        
-        
+
+        <Button Text="Corrigir"
+                x:Name="corrigir"
+                FontFamily="SourGummyR"
+                HorizontalOptions="Center"
+                Clicked="corrigir_Clicked"
+                BackgroundColor="Red"/>
+
+        <Button Text="Confirmar"
+                x:Name="confirmar"
+                FontFamily="SourGummyR"
+                HorizontalOptions="Center"
+                Clicked="confirmar_Clicked"
+                BackgroundColor="Green"/>
+
+
     </VerticalStackLayout>
 </ContentPage>
