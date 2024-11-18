@@ -8,20 +8,20 @@ namespace CadastroDeEventos
         {
             new Salao()
             {
-                Descricao = "Salao Premium",
-                Valor = 2000.0
+                Descricao = "Salão Premium",
+                Valor = 200.0
             },
 
             new Salao()
             {
-                Descricao = "Salao Expanded",
-                Valor = 1000.0
+                Descricao = "Salão Expanded",
+                Valor = 100.0
             },
 
             new Salao()
             {
-                Descricao = "Salao Economy",
-                Valor = 500.0
+                Descricao = "Salão Economy",
+                Valor = 50.0
             },
         };
         public App()

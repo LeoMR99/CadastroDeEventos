@@ -10,16 +10,23 @@
     <VerticalStackLayout VerticalOptions="CenterAndExpand"
                          Padding="10"
                          Spacing="0">
-
-        <Label 
+        
+        <Frame Margin="6"
+               Padding="10"
+               BackgroundColor="DimGray"
+               BorderColor="Black">
+            
+            <Label 
             Text="Organize seu Evento!"
             FontFamily="SourGummyR"
+            HorizontalTextAlignment="Center"
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="FillAndExpand"
-            FontSize="35"
-            BackgroundColor="{StaticResource Gray500}"            
+            FontSize="35"                        
             TextColor="Purple"/>
-
+            
+        </Frame>
+        
         <Frame Margin="10"
                Padding="10"
                BackgroundColor="DimGray"
@@ -92,7 +99,8 @@
                 </Grid>
 
                 <Picker x:Name="pck_salao"
-                        Title="Selecione seu Salão"
+                        Title="Selecione o Local do Evento"
+                        HorizontalOptions="CenterAndExpand"
                         FontFamily="SourGummyR"
                         TitleColor="Purple"
                         TextColor="Black"
@@ -108,28 +116,38 @@
 
             <VerticalStackLayout Spacing="10">
                 
-                <HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
 
                     <Label Text="Data de Início: "
                            FontFamily="SourGummyR"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
                            TextColor="Purple"/>
+                    
                     <DatePicker x:Name="dtpck_inicio"
                                 FontFamily="SourGummyR"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
                                 DateSelected="dtpck_inicio_DateSelected"
                                 Format="dd/MM/yyyy"
-                                TextColor="Purple"/>
+                                TextColor="Black"/>
                     
                 </HorizontalStackLayout>
 
-                <HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
 
                     <Label Text="Data de Término: "
                            FontFamily="SourGummyR"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
                            TextColor="Purple"/>
+                    
                     <DatePicker x:Name="dtpck_termino"
                                 FontFamily="SourGummyR"
-                                  Format="dd/MM/yyyy"
-                                TextColor="Purple"/>
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                Format="dd/MM/yyyy"
+                                TextColor="Black"/>
 
                 </HorizontalStackLayout>
 
